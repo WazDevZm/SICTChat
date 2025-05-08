@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassChat - Authentication</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-header">
+            <h1 id="auth-title">Login</h1>
+            <p id="auth-subtitle">Welcome back to ClassChat</p>
+        </div>
+        
+        <div class="auth-tabs">
+            <button id="loginTab" class="auth-tab active">Login</button>
+            <button id="signupTab" class="auth-tab">Sign Up</button>
+        </div>
+        
+        <form id="authForm" class="auth-form">
+            <div id="nameFields" class="form-group" style="display: none;">
+                <label for="name">Username</label>
+                <input type="text" id="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            
+            <button type="submit" id="authSubmit" class="btn btn-primary">Login</button>
+        </form>
+        
+        <div class="auth-footer">
+            <p id="switchAuth">Don't have an account? <a href="#" id="switchLink">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>

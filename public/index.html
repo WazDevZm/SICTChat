@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassChat - Welcome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="welcome-page">
+    <div class="welcome-container">
+        <div class="welcome-content">
+            <h1 class="welcome-title animate-pop">ClassChat</h1>
+            <p class="welcome-subtitle animate-fade">Connect with your classmates</p>
+            <div class="button-group animate-slide-up">
+                <button id="loginBtn" class="btn btn-primary">Login</button>
+                <button id="signupBtn" class="btn btn-secondary">Sign Up</button>
+            </div>
+        </div>
+        <div class="welcome-animation">
+            <div class="chat-bubble bubble1"></div>
+            <div class="chat-bubble bubble2"></div>
+            <div class="chat-bubble bubble3"></div>
+        </div>
+    </div>
+
+    <script src="scripts/utils.js"></script>
+    <script>
+        document.getElementById('loginBtn').addEventListener('click', () => {
+            window.location.href = '/auth?mode=login';
+        });
+        
+        document.getElementById('signupBtn').addEventListener('click', () => {
+            window.location.href = '/auth?mode=signup';
+        });
+    </script>
+</body>
+</html>
