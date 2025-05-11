@@ -47,6 +47,23 @@ document.addEventListener('DOMContentLoaded', () => {
         authSubmit.disabled = true;
         authSubmit.innerHTML = '<div class="spinner"></div>';
         
+        // Add validation for empty fields before sending requests
+        if (authSubmit.textContent.includes('Sign Up')) {
+            if (!name || !email || !password) {
+                showError('All fields are required for sign up.');
+                authSubmit.disabled = false;
+                authSubmit.textContent = 'Sign Up';
+                return;
+            }
+        } else {
+            if (!email || !password) {
+                showError('Email and password are required for login.');
+                authSubmit.disabled = false;
+                authSubmit.textContent = 'Login';
+                return;
+            }
+        }
+        
         try {
             let response;
             

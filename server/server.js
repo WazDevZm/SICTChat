@@ -21,6 +21,14 @@ if (!fs.existsSync(USERS_FILE)) {
   fs.writeFileSync(USERS_FILE, JSON.stringify([]));
 }
 
+// Add error handling for corrupted or missing users.json
+try {
+  const users = JSON.parse(fs.readFileSync(USERS_FILE));
+} catch (err) {
+  console.error('Error reading users.json:', err);
+  fs.writeFileSync(USERS_FILE, JSON.stringify([]));
+}
+
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
